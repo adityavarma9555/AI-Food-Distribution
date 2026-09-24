@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Dashboard | FoodBridge</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+
+<body>
+
+    <header>
+        <div class="navbar">
+
+            <div class="logo">
+                🍲 FoodBridge
+            </div>
+
+            <nav>
+                <a href="/">Home</a>
+                <a href="/donor">Donate Food</a>
+                <a href="/receiver">Find Food</a>
+                <a href="/dashboard">Dashboard</a>
+                <a href="/about">About</a>
+            </nav>
+
+            <a href="/donor" class="nav-btn">
+                Donate Food
+            </a>
+
+        </div>
+    </header>
+
+
+    <section class="how-section">
+
+        <div class="section-title">
+
+            <span>AI FOOD DISTRIBUTION</span>
+
+            <h2>
+                Smart
+                <strong>Dashboard</strong>
+            </h2>
+
+            <p>
+                Monitor food donations, AI matches and
+                successful distributions.
+            </p>
+
+        </div>
+
+
+        <!-- STATISTICS -->
+
+        <div class="stats" style="margin-top:50px;">
+
+            <div class="stat">
+                <h2 id="totalMeals">1,250+</h2>
+                <p>Total Meals Donated</p>
+            </div>
+
+            <div class="stat">
+                <h2 id="servedMeals">980+</h2>
+                <p>Meals Distributed</p>
+            </div>
+
+            <div class="stat">
+                <h2>85+</h2>
+                <p>Active Donors</p>
+            </div>
+
+            <div class="stat">
+                <h2>94%</h2>
+                <p>AI Match Accuracy</p>
+            </div>
+
+        </div>
+
+
+        <!-- AI MATCHING -->
+
+        <div class="ai-section" style="margin-top:60px;">
+
+            <div class="ai-text">
+
+                <div class="tag">
+                    🤖 AI MATCHING ENGINE
+                </div>
+
+                <h2>
+                    Find the
+                    <span>Best Match</span>
+                </h2>
+
+                <p>
+                    Our AI analyzes food quantity, location,
+                    food type and urgency to recommend the
+                    most suitable receiver.
+                </p>
+
+                <button onclick="runAI()" class="btn-primary" style="border:none; cursor:pointer;">
+                    🤖 Run AI Matching
+                </button>
+
+            </div>
+
+
+            <div class="match-box">
+
+                <div class="match-header">
+
+                    <strong>
+                        AI Recommendation
+                    </strong>
+
+                    <span>
+                        ● Active
+                    </span>
+
+                </div>
+
+
+                <div class="match-item">
+
+                    <div class="match-icon">
+                        🍛
+                    </div>
+
+                    <div>
+
+                        <strong>
+                            Vegetable Biryani
+                        </strong>
+
+                        <p>
+                            30 meals • 2.4 km away
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="line"></div>
+
+
+                <div class="match-item">
+
+                    <div class="match-icon">
+                        🏠
+                    </div>
+
+                    <div>
+
+                        <strong>
+                            Helping Hands NGO
+                        </strong>
+
+                        <p>
+                            Needs 25 meals • Nearby
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="score">
+
+                    <span>
+                        AI Match Score
+                    </span>
+
+                    <strong id="aiScore">
+                        94%
+                    </strong>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- RECENT DONATIONS -->
+
+        <div style="margin-top:70px;">
+
+            <div class="section-title">
+
+                <span>RECENT ACTIVITY</span>
+
+                <h2>
+                    Recent
+                    <strong>Donations</strong>
+                </h2>
+
+            </div>
+
+
+            <div class="steps" style="margin-top:40px;">
+
+                <div class="step-card">
+
+                    <div class="step-icon">
+                        🍛
+                    </div>
+
+                    <h3>
+                        Vegetable Biryani
+                    </h3>
+
+                    <p>
+                        30 meals
+                    </p>
+
+                    <p>
+                        📍 2.4 km away
+                    </p>
+
+                    <p>
+                        🤖 Matched
+                    </p>
+
+                </div>
+
+
+                <div class="step-card">
+
+                    <div class="step-icon">
+                        🥗
+                    </div>
+
+                    <h3>
+                        Fresh Salad
+                    </h3>
+
+                    <p>
+                        20 meals
+                    </p>
+
+                    <p>
+                        📍 3.1 km away
+                    </p>
+
+                    <p>
+                        🤖 Matched
+                    </p>
+
+                </div>
+
+
+                <div class="step-card">
+
+                    <div class="step-icon">
+                        🍞
+                    </div>
+
+                    <h3>
+                        Bread & Snacks
+                    </h3>
+
+                    <p>
+                        40 meals
+                    </p>
+
+                    <p>
+                        📍 1.8 km away
+                    </p>
+
+                    <p>
+                        ✅ Distributed
+                    </p>
+
+                </div>
+
+
+                <div class="step-card">
+
+                    <div class="step-icon">
+                        🍚
+                    </div>
+
+                    <h3>
+                        Rice Meals
+                    </h3>
+
+                    <p>
+                        25 meals
+                    </p>
+
+                    <p>
+                        📍 2.9 km away
+                    </p>
+
+                    <p>
+                        ⏳ Pending Pickup
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- AI RESULT -->
+
+        <div id="aiResult" style="display:none;
+                max-width:700px;
+                margin:50px auto;
+                padding:25px;
+                background:#eaf6ee;
+                border-radius:15px;
+                text-align:center;">
+
+            <h3>
+                🤖 AI Matching Completed
+            </h3>
+
+            <p>
+                Best receiver found with a
+                <strong>94% match score.</strong>
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <footer>
+
+        <div class="footer-content">
+
+            <div>
+
+                <h2>🍲 FoodBridge</h2>
+
+                <p>
+                    AI-powered food redistribution
+                    for a better tomorrow.
+                </p>
+
+            </div>
+
+
+            <div>
+
+                <h3>Quick Links</h3>
+
+                <a href="/">Home</a>
+
+                <a href="/donor">
+                    Donate Food
+                </a>
+
+                <a href="/receiver">
+                    Find Food
+                </a>
+
+            </div>
+
+
+            <div>
+
+                <h3>Project</h3>
+
+                <a href="/about">
+                    About
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <div class="copyright">
+            © 2026 FoodBridge | AI Food Distribution System
+        </div>
+
+    </footer>
+
+
+    <script>
+
+        function runAI() {
+
+            const result =
+                document.getElementById("aiResult");
+
+            const score =
+                document.getElementById("aiScore");
+
+            result.style.display = "block";
+
+            score.innerText = "94%";
+
+            result.scrollIntoView({
+                behavior: "smooth"
+            });
+
+        }
+
+    </script>
+
+
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+
+</body>
+
+</html>
